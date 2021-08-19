@@ -21,18 +21,9 @@ export default createGlobalStyle`
   }
 
   body {
-    background: ${props => props.theme.colors.background};
-    color: ${props => props.theme.colors.text};
+    background: ${props => props.theme.colors.gray50};
+    color: ${props => props.theme.colors.gray600};
     font: 400 1rem ${props => props.theme.fonts.default}, sans-serif;
-    padding: 2rem 8rem;
-
-    @media (max-width: 1024px) {
-      padding: 2rem 4rem;
-    }
-
-    @media (max-width: 425px) {
-      padding: 2rem;
-    }
   }
 
   a {
