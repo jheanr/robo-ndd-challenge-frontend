@@ -12,7 +12,7 @@ This is an application for [R.O.B.O] challenge by NDD which you can simulate sen
 
 ## Live preview
 
-You can access a demo [here](https://github.com/jheanr).
+You can access a live preview [here](https://robo-challenge.vercel.app).
 
 ## Technologies
 
