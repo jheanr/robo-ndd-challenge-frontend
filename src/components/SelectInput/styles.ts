@@ -1,10 +1,14 @@
 import styled, { css } from 'styled-components';
 
+type OptionProps = {
+  selected: boolean;
+};
+
 export const Container = styled.div`
   background: ${({ theme }) => theme.colors.white};
   border: 1px solid ${({ theme }) => theme.colors.gray400};
-  border-radius: .25rem;
-  padding: .5rem;
+  border-radius: 0.25rem;
+  padding: 0.5rem;
   position: relative;
   width: 100%;
 
@@ -14,19 +18,19 @@ export const Container = styled.div`
 
 export const Label = styled.label`
   color: ${({ theme }) => theme.colors.gray400};
-  font-size: .75rem;
-  margin-bottom: .25rem;
+  font-size: 0.75rem;
+  margin-bottom: 0.25rem;
   text-transform: uppercase;
 `;
 
 export const InputContainer = styled.div`
   cursor: pointer;
   min-width: 100px;
-`
+`;
 
 export const Input = styled.p`
   color: ${({ theme }) => theme.colors.gray500};
-  font-size: .875rem;
+  font-size: 0.875rem;
   font-weight: 500;
 
   display: flex;
@@ -37,7 +41,7 @@ export const Input = styled.p`
 export const Options = styled.ul`
   background: ${({ theme }) => theme.colors.white};
   border: 1px solid ${({ theme }) => theme.colors.gray400};
-  border-radius: .25rem;
+  border-radius: 0.25rem;
   list-style: none;
 
   position: absolute;
@@ -50,20 +54,18 @@ export const Options = styled.ul`
   flex-direction: column;
 `;
 
-type OptionProps = {
-  selected: boolean;
-}
-
 export const Option = styled.li<OptionProps>`
   color: ${({ theme }) => theme.colors.gray500};
   cursor: pointer;
-  font-size: .875rem;
-  padding: .75rem;
+  font-size: 0.875rem;
+  padding: 0.75rem;
 
-  ${({ selected }) => selected && css`
-    font-weight: 700;
-  `}
-  
+  ${({ selected }) =>
+    selected &&
+    css`
+      font-weight: 700;
+    `}
+
   transition: background .2s;
 
   &:hover {
@@ -71,11 +73,10 @@ export const Option = styled.li<OptionProps>`
   }
 
   &:first-child {
-    border-radius: .25rem .25rem 0 0;
+    border-radius: 0.25rem 0.25rem 0 0;
   }
 
   &:last-child {
-    border-radius: 0 0 .25rem .25rem;
+    border-radius: 0 0 0.25rem 0.25rem;
   }
 `;
-

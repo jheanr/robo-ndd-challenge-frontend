@@ -1,9 +1,11 @@
-import { useCallback } from 'react';
-import { useState } from 'react';
+import { useCallback, useState, memo } from 'react';
 import { FiChevronDown, FiChevronUp } from 'react-icons/fi';
 import { useTheme } from 'styled-components';
 
-import { 
+import { ArmsPartsTypes, ArmsTypes } from '../../interfaces/Arms';
+import { HeadTypes } from '../../interfaces/Head';
+
+import {
   Container,
   Label,
   InputContainer,
@@ -12,31 +14,47 @@ import {
   Option,
 } from './styles';
 
-interface SelectInputProps {
+type SelectInputProps = {
   label: string;
   options: string[];
   selectedOption: string;
-  head?: 'inclination' | 'rotation';
-  arm?: 'left' | 'right';
-  part?: 'elbow' | 'wrist';
-  setHeadPosition?: (action: string, movement: number) => void;
-  setArmPosition?: (arm: string, part: string, movement: number) => void;
-}
+  head?: HeadTypes;
+  arm?: ArmsTypes;
+  part?: ArmsPartsTypes;
+  setHeadPosition?: (action: HeadTypes, movement: number) => void;
+  setArmPosition?: (
+    arm: ArmsTypes,
+    part: ArmsPartsTypes,
+    movement: number,
+  ) => void;
+};
 
-function SelectInput({ label, options, selectedOption, head, arm, part, setHeadPosition, setArmPosition }: SelectInputProps) {
+function SelectInputComponent({
+  label,
+  options,
+  selectedOption,
+  head,
+  arm,
+  part,
+  setHeadPosition,
+  setArmPosition,
+}: SelectInputProps) {
   const theme = useTheme();
 
   const [isOptionsOpen, setIsOptionsOpen] = useState(false);
 
-  const handleSelectMovement = useCallback((movement: number) => {
-    if (head) {
-      setHeadPosition(head, movement);
-    } else {
-      setArmPosition(arm, part, movement);
-    }
+  const handleSelectMovement = useCallback(
+    (movement: number) => {
+      if (head) {
+        setHeadPosition(head, movement);
+      } else {
+        setArmPosition(arm, part, movement);
+      }
 
-    setIsOptionsOpen(false);
-  }, []);
+      setIsOptionsOpen(false);
+    },
+    [arm, head, part, setHeadPosition, setArmPosition],
+  );
 
   return (
     <Container>
@@ -44,12 +62,12 @@ function SelectInput({ label, options, selectedOption, head, arm, part, setHeadP
 
       <InputContainer onClick={() => setIsOptionsOpen(!isOptionsOpen)}>
         <Input>
-          {selectedOption} 
-          {
-            isOptionsOpen 
-            ? <FiChevronUp size={20} color={theme.colors.gray600} /> 
-            : <FiChevronDown size={20} color={theme.colors.gray600} /> 
-          }
+          {selectedOption}
+          {isOptionsOpen ? (
+            <FiChevronUp size={20} color={theme.colors.gray600} />
+          ) : (
+            <FiChevronDown size={20} color={theme.colors.gray600} />
+          )}
         </Input>
       </InputContainer>
 
@@ -60,7 +78,7 @@ function SelectInput({ label, options, selectedOption, head, arm, part, setHeadP
 
             return (
               <Option
-                key={index}
+                key={option}
                 onClick={() => handleSelectMovement(movement)}
                 selected={selectedOption === option}
               >
@@ -72,6 +90,8 @@ function SelectInput({ label, options, selectedOption, head, arm, part, setHeadP
       )}
     </Container>
   );
-};
+}
 
-export { SelectInput };
+export const SelectInput = memo(SelectInputComponent, (prevProps, nextProps) =>
+  Object.is(prevProps.selectedOption, nextProps.selectedOption),
+);

@@ -9,12 +9,13 @@ const theme = {
     gray600: '#4A5568',
     gray700: '#2D3748',
     title: '#065666',
+    hightlight: '#68D391',
     error: '#E53E3E',
-    white: '#FFFFFF'
+    white: '#FFFFFF',
   },
   fonts: {
-    default: 'Roboto'
-  }
-}
+    default: 'Roboto',
+  },
+};
 
-export default theme
+export default theme;
