@@ -3,17 +3,17 @@
 This is an application for [R.O.B.O] challenge by NDD which you can simulate sending commands to a robot to execute through an graphic interface. You can check the API developed to this project [here](https://github.com/jheanr/robo-ndd-challenge-backend). See [Technologies](#technologies) to details.
 
 <p>
-  <a href="#live-preview">Live preview</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+  <a href="#Demo">Demo</a>&nbsp;&nbsp;|&nbsp;&nbsp;
   <a href="#technologies">Technologies</a>&nbsp;&nbsp;|&nbsp;&nbsp;
   <a href="#how-to-use">How to use</a>&nbsp;&nbsp;|&nbsp;&nbsp;
-  <a href="#speech-commands">Speech commands
+  <a href="#speech-commands">Speech commands</a>
 </p>
 
 ![cover](.github/cover.png?style=flat)
 
-## Live preview
+## Demo
 
-You can access a live preview [here](https://robo-challenge.vercel.app).
+You can access a demo [here](https://robo-challenge.vercel.app). 
 
 ## Technologies
 
