@@ -237,6 +237,6 @@ export const getStaticProps: GetStaticProps = async () => {
       robo,
       movements: movementsResponse.data,
     },
-    revalidate: 60 * 60 * 24, // seconds * minutes * hours
+    revalidate: 60 * 5, // seconds * minutes
   };
 };
