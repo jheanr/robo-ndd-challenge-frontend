@@ -21,9 +21,17 @@ export default createGlobalStyle`
   }
 
   body {
-    background: ${props => props.theme.colors.gray50};
+    background-color: ${props => props.theme.colors.gray50};
+    background-image: url("background.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
     color: ${props => props.theme.colors.gray600};
     font: 400 1rem ${props => props.theme.fonts.default}, sans-serif;
+
+    @media (max-width: 425px) {
+      background-image: url("background-mobile.png");
+    }
   }
 
   a {
