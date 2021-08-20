@@ -1,4 +1,3 @@
-import { useCallback } from 'react';
 import { FiMic } from 'react-icons/fi';
 import { createSpeechlySpeechRecognition } from '@speechly/speech-recognition-polyfill';
 import SpeechRecognition, {
