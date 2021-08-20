@@ -3,7 +3,7 @@
 This is an application for [R.O.B.O] challenge by NDD which you can simulate sending commands to a robot to execute through an graphic interface. You can check the API developed to this project [here](https://github.com/jheanr/robo-ndd-challenge-backend). See [Technologies](#technologies) to details.
 
 <p>
-  <a href="#Demo">Live preview</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+  <a href="#live-preview">Live preview</a>&nbsp;&nbsp;|&nbsp;&nbsp;
   <a href="#technologies">Technologies</a>&nbsp;&nbsp;|&nbsp;&nbsp;
   <a href="#how-to-use">How to use</a>&nbsp;&nbsp;|&nbsp;&nbsp;
 </p>
