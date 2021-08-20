@@ -6,6 +6,7 @@ import { Head } from '../components/Robo/Head';
 import { LeftArm } from '../components/Robo/LeftArm';
 import { RightArm } from '../components/Robo/RightArm';
 import { SelectInput } from '../components/SelectInput';
+import { SpeechToMove } from '../components/SpeechToMove';
 
 import {
   ArmProps,
@@ -218,6 +219,11 @@ export default function Home({ robo, movements }: HomeProps) {
           </ArmsPanel>
         </Panel>
       </ControlPanel>
+
+      <SpeechToMove
+        setHeadPosition={handleHeadPosition}
+        setArmPosition={handleArmsPosition}
+      />
     </Container>
   );
 }

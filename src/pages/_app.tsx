@@ -1,3 +1,4 @@
+import 'regenerator-runtime/runtime';
 import Head from 'next/head';
 import { AppProps } from 'next/app';
 import { ThemeProvider } from 'styled-components';
